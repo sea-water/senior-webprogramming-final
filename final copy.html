@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>final</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script type="text/javascript">
+
+
+</script>
+
+</head>
+<body>
+  
+<div>
+   <h1>생일 축하 적고가는 곳</h1>
+   <hr>
+</div>
+
+<div>
+   <p>축하 방명록</p>
+   
+   <div>
+      <form action='./ddbb.php' name='form1' method='post'>
+         <table class="tbl">
+            <tr>
+               <th>작성자</th>
+               <td>
+                  <input type="text" id="uName" style="width: 150px;">
+               </td>
+            </tr>
+            <tr>
+               <th>내용</th>
+               <td>
+                  <input type="text" id="uContent" style="width: 560px;">
+               </td>
+            </tr>
+         </table>
+         
+         <br>
+         <input type="button" value="글쓰기" class="btn" style="width: 624px; height: 50px; font-size:18pt;" onclick="main()", value='전 송'>
+         
+         <br><br>
+         <table class="tbl" id="bbsTable">
+            <tr>
+               <th>번호</th>
+               <th>작성자</th>
+               <th>내용</th>
+               <th>작성일</th>
+            </tr>
+         </table>
+      </form>
+   </div>
+</div>
+
+
+</body>
+</html>

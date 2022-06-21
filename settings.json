@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Quiet Light",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "php.validate.executablePath": ""
+}

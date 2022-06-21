@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./log in.css">
+    <script>
+        function loginFunc() {
+            funcUserId = "권해수";
+            funcUserPwd = "1125";
+            findUserId = document.getElementById("userid").value;
+            findUserPwd = document.getElementById("pwd").value;
+
+            if (funcUserId == findUserId && funcUserPwd == findUserPwd){
+                alert("환영합니다!");
+                window.open("final.html");
+            } else {
+                alert("ㅠㅠㅠㅠㅠㅠㅠㅠㅠ");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="login">
+            <h2>Welcome</h2>
+            <div class="login_id">
+                <h4>MY NAME</h4>
+                <input id="userid" type='text' placeholder="NAME">
+            </div>
+            <div class="login_pw">
+                <h4>MY BIRTHDAY</h4>
+                <input id="pwd" type='password' placeholder="Birthday">
+            </div>
+            <div class="submit">
+            <input type="button" onclick="loginFunc()" value="JOIN">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

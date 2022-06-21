@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/earlyaccess/jejugothic.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <title>final</title>
+    <link rel="stylesheet" href="./page.css" />
+    <script type="text/javascript">
+      var boardArray = new Array();
+
+      function Board(uName, uContent) {
+        this.userName = uName;
+        this.content = uContent;
+        this.writeDay = new Date();
+      }
+
+      Board.prototype.userLocalString = function () {
+        return (
+          this.writeDay.getFullYear() +
+          "-" +
+          (this.writeDay.getMonth() + 1) +
+          "-" +
+          this.writeDay.getDate() +
+          "-" +
+          this.writeDay.getHours() +
+          ":" +
+          this.writeDay.getSeconds()
+        );
+      };
+
+      function main() {
+        var uName = document.getElementById("uName").value;
+        var uContent = document.getElementById("uContent").value;
+
+        var len = boardArray.length;
+
+        boardArray[len] = new Board(uName, uContent);
+
+        print(len);
+
+        clear();
+      }
+
+      function print(idx) {
+        var tableNode = document.getElementById("bbsTable");
+        var trNode = document.createElement("tr");
+
+        trNode.appendChild(createTdNode((idx + 1).toString()));
+        trNode.appendChild(createTdNode(boardArray[idx].userName));
+        trNode.appendChild(createTdNode(boardArray[idx].content));
+        trNode.appendChild(createTdNode(boardArray[idx].userLocalString()));
+
+        tableNode.appendChild(trNode);
+      }
+
+      function createTdNode(val) {
+        var textNode = document.createTextNode(val);
+        var tdNode = document.createElement("td");
+        tdNode.appendChild(textNode);
+        return tdNode;
+      }
+
+      function clear() {
+        document.getElementById("uName").value = "";
+        document.getElementById("uContent").value = "";
+        document.getElementById("uName").focus();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Write letter to ME</h1>
+      <p>축하 방명록</p>
+      <form>
+        <div class="name">
+          <h2>작성자</h2>
+          <input type="text" id="uName" style="width: 150px" />
+        </div>
+
+        <div class="content">
+          <h2>내용</h2>
+          <input type="text" id="uContent" style="width: 560px" />
+        </div>
+
+        <div class="submit">
+          <input type="button" value="WRITE" onclick="main()" />
+        </div>
+        <br /><br />
+        <table class="tbll" id="bbsTable">
+          <tr>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+          </tr>
+          <tr></tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
